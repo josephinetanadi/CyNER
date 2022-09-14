@@ -9,7 +9,7 @@ setup(
     version=version,
     license='MIT',
     description='Cybersecurity named entity recognition',
-    url='https://github.com/aiforsec/CyNER',
+    url='https://github.com/josephinetanadi/CyNER',
     download_url="https://github.com/aiforsec/CyNER/archive/{}.tar.gz".format(version),
     keywords=['ner', 'nlp', 'language-model'],
     long_description=readme,
