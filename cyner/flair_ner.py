@@ -19,9 +19,9 @@ class Flair(EntityExtraction):
     def get_entities(self, text):
         sentence = Sentence(text)
         self.tagger.predict(sentence)
-        pred = sentence.to_dict(tag_type='ner')
+        # pred = sentence.to_dict(tag_type='ner')
         entities = []
-        for x in pred['entities']:
+        for x in sentence.get_spans('ner'):
             # 'labels' are formatted as [(TAG prob), ...]
-            entities.append(Entity(x['start_pos'], x['end_pos'], x['text'], x['labels'][0].value, x['labels'][0].score))
+            entities.append(Entity(x.start_position, x.end_position, x.text, x.get_label("ner").value, x.get_label("ner").score))
         return entities
